@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+    # configure jaffle shop dataset
+    - name: jaffleshop
+      database: raw
+      schema: jaffleshop
+      tables:
+        - name: customers
+          columns:
+            - name: id
+              tests: 
+                - unique
+                - not_null
+        - name: orders
+
+    # configure stripe payments source dataset    
+    - name: stripe
+      database: raw
+      schema: stripe
+      tables:
+        - name: payment
