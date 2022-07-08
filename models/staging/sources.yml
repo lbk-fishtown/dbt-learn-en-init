@@ -20,3 +20,9 @@ sources:
       schema: stripe
       tables:
         - name: payment
+
+      freshness:
+        warn_after:
+          count: 8
+          period: hour
+      loaded_at_field: to_timestamp(created)
