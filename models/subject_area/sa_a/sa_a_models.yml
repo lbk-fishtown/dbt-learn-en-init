@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: customer_profile
+      description: ""
+      columns:
+        - name:  customer_key
+          description: "unique per customer"
+          tests:
+            - not_null
+            - unique
