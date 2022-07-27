@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: dim_customers_14
+    description: Customer dimensions table_14
+    columns:
+      - name: customer_key
+        description: Primary key on the customers table
+        tests:
+          - unique
+          - not_null
+      - name: region
+        description: region name
+        tests:
+          - accepted_values:
+              values: ['AFRICA','MIDDLE EAST','ASIA','EUROPE','AMERICA']
+              severity: warn
+      - name: name
+        description: customer id
+      - name: address
+        description: address of the customer
+      - name: nation
+        description: nation name
+      - name: phone_number
+        description: phone number of the customer
+      - name: account_balance
+        
+      - name: market_segment
+        description: market segment of the customer
+
+
+  - name: dim_parts_14
+    description: Parts dimensions table_14
+    columns:
+      - name: part_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+      - name: manufacturer
+        description: manufacturer of the part
+      - name: name
+        description: name of the part
+      - name: brand
+        description: brand of the part
+      - name: type
+        description: type of part including material
+      - name: size
+        description: size of the part
+      - name: container
+        description: container of the part
+      - name: retail_price
+        
+
+  - name: dim_suppliers_14
+    description: Suppliers dimensions table_14
+    columns:
+      - name: supplier_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+      - name: supplier_name
+        
+      - name: supplier_address
+        
+      - name: nation
+        description: nation name
+      - name: region
+        description: region name
+      - name: phone_number
+        
+      - name: account_balance
+        
+ 
+  - name: fct_order_items_14
+    description: order items fact table
+    columns:
+      - name: order_item_key
+        
+        tests:
+          - unique
+          - not_null
+      - name: order_key
+        description: foreign key for orders
+      - name: order_date
+        description: date of the order
+      - name: customer_key
+        description: foreign key for customers
+      - name: part_key
+        description: foreign key for part
+      - name: supplier_key
+        description: foreign key for suppliers
+      - name: order_item_status_code
+        description: status of the order item
+      - name: return_flag
+        
+      - name: line_number
+        
+      - name: ship_date
+        
+      - name: commit_date
+        
+      - name: receipt_date
+        
+      - name: ship_mode
+        
+      - name: supplier_cost
+        
+      - name: base_price
+        
+      - name: discount_percentage
+        
+      - name: discounted_price
+        
+      - name: tax_rate
+        
+      - name: nation_key
+        description: 'Nation key'
+        tests:
+         - not_null
+      - name: order_item_count
+        description: count of order items
+      - name: quantity
+        description: total units
+      - name: gross_item_sales_amount
+        
+      - name: discounted_item_sales_amount
+        
+      - name: item_discount_amount
+        
+      - name: item_tax_amount
+        
+      - name: net_item_sales_amount
+        
+  
+  - name: fct_orders_14
+    description: orders fact table
+    columns:
+      - name: order_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: foreign key for customers
+        
+      - name: order_date
+        description: date of the order
+      - name: status_code
+        description: status of the order
+      - name: priority_code
+        description: code associated with the order
+      - name: clerk_name
+        description: id of the clerk
+      - name: ship_priority
+        description: numeric representation of the shipping priority, zero being the default
+      - name: order_count
+        description: count of order
+      - name: gross_item_sales_amount
+        
+      - name: item_discount_amount
+        
+      - name: item_tax_amount
+        
+      - name: net_item_sales_amount
+        
