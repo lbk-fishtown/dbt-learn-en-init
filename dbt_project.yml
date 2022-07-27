@@ -38,61 +38,6 @@ models:
   jaffle_shop:
     staging:
       +materialized: view
-      subject_area_1
-      +tags: sa1
-      subject_area_2
-      +tags: sa2
-      subject_area_3
-      +tags: sa3
-      subject_area_4
-      +tags: sa4
-      subject_area_5
-      +tags: sa5
-      subject_area_6
-      +tags: sa6
-      subject_area_7
-      +tags: sa7
-      subject_area_8
-      +tags: sa8
-      subject_area_9
-      +tags: sa9
-      subject_area_10
-      +tags: sa10
-      subject_area_11
-      +tags: sa11
-      subject_area_12
-      +tags: sa12
-      subject_area_13
-      +tags: sa13
-      subject_area_14
-      +tags: sa14      
+      
     marts:
       +materialized: table
-      subject_area_1
-      +tags: sa1
-      subject_area_2
-      +tags: sa2
-      subject_area_3
-      +tags: sa3
-      subject_area_4
-      +tags: sa4
-      subject_area_5
-      +tags: sa5
-      subject_area_6
-      +tags: sa6
-      subject_area_7
-      +tags: sa7
-      subject_area_8
-      +tags: sa8
-      subject_area_9
-      +tags: sa9
-      subject_area_10
-      +tags: sa10
-      subject_area_11
-      +tags: sa11
-      subject_area_12
-      +tags: sa12
-      subject_area_13
-      +tags: sa13
-      subject_area_14
-      +tags: sa14
